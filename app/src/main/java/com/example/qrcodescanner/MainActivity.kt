@@ -31,6 +31,8 @@ class MainActivity : AppCompatActivity() {
 
            startScanning()
 
+            //TODO : test
+
         }
     }
 
