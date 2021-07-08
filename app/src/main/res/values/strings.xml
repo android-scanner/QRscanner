@@ -22,4 +22,7 @@
     <string name="vaccine_type">Vaccine Type: </string>
     <string name="vaccine_number">Vaccine N°:</string>
     <string name="user_info">User Info</string>
+    <string name="home">Home</string>
+    <string name="exit">Exit</string>
+
 </resources>

@@ -18,8 +18,8 @@ class UIscreen : AppCompatActivity() {
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.nav_acceuil -> Toast.makeText(this,"acceuil", Toast.LENGTH_SHORT).show()
-            R.id.nav_quitter -> Toast.makeText(this,"Quitter", Toast.LENGTH_SHORT).show()
+            R.id.nav_acceuil -> Toast.makeText(this,getString(R.string.home), Toast.LENGTH_SHORT).show()
+            R.id.nav_quitter -> Toast.makeText(this,getString(R.string.exit), Toast.LENGTH_SHORT).show()
 
         }
         return super.onOptionsItemSelected(item)

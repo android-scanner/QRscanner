@@ -21,6 +21,6 @@
        app:frameAspectRatioWidth="1"
        app:frameSize="0.75"
        app:frameThickness="2dp"
-       app:maskColor="#77000000"/>
+       app:maskColor="@color/light_gray"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
