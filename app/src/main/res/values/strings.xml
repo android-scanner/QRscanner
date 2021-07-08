@@ -1,3 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">QR code scanner</string>
+    <string
+        name="full_name"
+        >Full Name: </string>
+    <string
+        name="id"
+        >ID Document: </string>
+    <string
+        name="age"
+        >Age: </string>
+    <string
+        name="fill"
+        >NULL</string>
+    <string
+        name="vaccine_info"
+        >Vaccine Info</string>
+    <string
+        name="hospital"
+        >Hospital: </string>
+    <string name="vaccine_type">Vaccine Type: </string>
+    <string name="vaccine_number">Vaccine N°:</string>
+    <string name="user_info">User Info</string>
 </resources>
