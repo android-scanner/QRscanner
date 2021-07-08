@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#cce6ff"
+    android:background="@color/light_blue"
     tools:context=".welcomescreen">
 
     <Button
@@ -12,13 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:text="Scan"
-        app:backgroundTint="#001a33"
+        android:text="@string/scan"
+        app:backgroundTint="@color/dark_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="#310B0B" />
+        app:strokeColor="@color/light_brown" />
 
     <TextView
         android:id="@+id/textView3"
@@ -26,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:fontFamily="sans-serif-medium"
-        android:text="To your safety place"
-        android:textColor="#001a33"
+        android:text="@string/text"
+        android:textColor="@color/dark_blue"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Welcome"
-        android:textColor="#001a33"
+        android:text="@string/welcome"
+        android:textColor="@color/dark_blue"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
