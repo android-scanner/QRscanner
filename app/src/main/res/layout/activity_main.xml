@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ScannerActivity">
 
    <com.budiyev.android.codescanner.CodeScannerView
        android:id="@+id/scanner_view"
@@ -21,6 +21,6 @@
        app:frameAspectRatioWidth="1"
        app:frameSize="0.75"
        app:frameThickness="2dp"
-       app:maskColor="#77000000"/>
+       app:maskColor="@color/dark_gray"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
