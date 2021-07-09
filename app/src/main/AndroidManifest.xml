@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QRCodeScanner">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".UIscreen">
+        <activity android:name=".UIscreen"></activity>
+        <activity android:name=".ScannerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
