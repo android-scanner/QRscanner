@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".UIscreen">
+
+
+
+    <TextView
+        android:id="@+id/vaccineinfotext2"
+        android:layout_width="202dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:inputType="text"
+        android:text="@string/user_info"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textgrouper1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textgrouper2"
+        android:layout_width="375dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/super_green_light"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vaccineinfotext" />
+
+    <TextView
+        android:id="@+id/vaccinenumbertext"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/white"
+        android:text="@string/vaccine_number"
+        android:textAlignment="gravity"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/brown"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textgrouper2"
+        app:layout_constraintStart_toStartOf="@+id/textgrouper2"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinetypetext" />
+
+    <TextView
+        android:id="@+id/vaccinetypetext"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/white"
+        android:text="@string/vaccine_type"
+        android:textAlignment="gravity"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/brown"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textgrouper2"
+        app:layout_constraintTop_toBottomOf="@+id/hospitaltext" />
+
+    <TextView
+        android:id="@+id/hospitaltext1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper2"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toEndOf="@+id/hospitaltext"
+        app:layout_constraintTop_toTopOf="@+id/textgrouper2" />
+
+    <TextView
+        android:id="@+id/vaccinetype1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper2"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toEndOf="@+id/hospitaltext"
+        app:layout_constraintTop_toBottomOf="@+id/hospitaltext1" />
+
+    <TextView
+        android:id="@+id/vaccinenumber1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textgrouper2"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper2"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/hospitaltext"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinetype1" />
+
+    <TextView
+        android:id="@+id/hospitaltext"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/white"
+        android:text="@string/hospital"
+        android:textAlignment="gravity"
+        android:textColor="@color/gray"
+        android:textColorHint="@color/brown"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textgrouper2"
+        app:layout_constraintTop_toTopOf="@+id/textgrouper2" />
+
+    <TextView
+        android:id="@+id/textgrouper1"
+        android:layout_width="375dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="148dp"
+        android:background="@color/super_green_light"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/agetext1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textgrouper1"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper1"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/agetext"
+        app:layout_constraintTop_toBottomOf="@+id/idtext1"
+        app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textname"
+            android:layout_width="124dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:shadowColor="@color/white"
+            android:text="@string/full_name"
+            android:textAlignment="gravity"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/brown"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textgrouper1"
+            app:layout_constraintTop_toTopOf="@+id/textgrouper1" />
+
+        <TextView
+        android:id="@+id/nametext1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper1"
+        app:layout_constraintStart_toEndOf="@+id/textname"
+        app:layout_constraintTop_toTopOf="@+id/textgrouper1" />
+
+    <TextView
+        android:id="@+id/idname"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/white"
+        android:text="@string/id"
+        android:textAlignment="gravity"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textgrouper1"
+        app:layout_constraintTop_toBottomOf="@+id/textname" />
+
+    <TextView
+        android:id="@+id/agetext"
+        android:layout_width="124dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/age"
+        android:textAlignment="gravity"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textgrouper1"
+        app:layout_constraintStart_toStartOf="@+id/textgrouper1"
+        app:layout_constraintTop_toBottomOf="@+id/idname"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <TextView
+        android:id="@+id/idtext1"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:text="@string/fill"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textgrouper1"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toEndOf="@+id/idname"
+        app:layout_constraintTop_toBottomOf="@+id/nametext1" />
+
+    <TextView
+        android:id="@+id/vaccineinfotext"
+        android:layout_width="202dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:text="@string/vaccine_info"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textgrouper1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="216dp"
+        tools:layout_editor_absoluteY="399dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout></ScrollView>
