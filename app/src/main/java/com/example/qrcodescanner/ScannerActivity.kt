@@ -17,7 +17,7 @@ import com.budiyev.android.codescanner.ScanMode
 import java.util.*
 
 class ScannerActivity : AppCompatActivity() {
-    private val code=123
+    private val code = 123
 
     private lateinit var codeScanner: CodeScanner
 
@@ -25,19 +25,19 @@ class ScannerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)==
-                PackageManager.PERMISSION_DENIED){
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA),code)
-        }else{
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
+                PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), code)
+        } else {
 
-           startScanning()
+            startScanning()
 
         }
     }
 
     private fun startScanning() {
-        val scannerView:CodeScannerView=findViewById(R.id.scanner_view)
-        codeScanner= CodeScanner(this, scannerView)
+        val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
+        codeScanner = CodeScanner(this, scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
         codeScanner.formats = CodeScanner.ALL_FORMATS
 
@@ -48,7 +48,7 @@ class ScannerActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this,"Scan Result:${it.text}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Scan Result:${it.text}", Toast.LENGTH_SHORT).show()
 
             }
         }
@@ -66,11 +66,11 @@ class ScannerActivity : AppCompatActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode == code){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == code) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show()
-               startScanning()
-            }else{
+                startScanning()
+            } else {
                 Toast.makeText(this, "Camera permission denied", Toast.LENGTH_SHORT).show()
             }
         }
@@ -78,15 +78,15 @@ class ScannerActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if(::codeScanner.isInitialized){
+        if (::codeScanner.isInitialized) {
             codeScanner.startPreview()
         }
     }
 
     override fun onPause() {
-        if(::codeScanner.isInitialized){
+        if (::codeScanner.isInitialized) {
             codeScanner.releaseResources()
         }
         super.onPause()
     }
-    }
+}
