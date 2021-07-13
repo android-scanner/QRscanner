@@ -1,6 +1,7 @@
 package com.example.qrcodescanner
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,7 +35,10 @@ class ScannerActivity : AppCompatActivity() {
 
         }
     }
-
+        fun nextActivity(){
+            val intentScan = Intent(this,UIscreen::class.java)
+            startActivity(intentScan)
+        }
     private fun startScanning() {
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
@@ -47,11 +51,9 @@ class ScannerActivity : AppCompatActivity() {
         codeScanner.isFlashEnabled = false
 
         codeScanner.decodeCallback = DecodeCallback {
-            runOnUiThread {
-                Toast.makeText(this, "Scan Result:${it.text}", Toast.LENGTH_SHORT).show()
-
-            }
+            nextActivity()
         }
+
 
         codeScanner.errorCallback = ErrorCallback {
             runOnUiThread {
