@@ -12,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QRCodeScanner">
-        <activity android:name=".ScannerActivity"
+        <activity
+            android:name=".ScannerActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".UIscreen"
-            ></activity>
-        <activity android:name=".welcomescreen"
+        <activity android:name=".UIScreen"></activity>
+        <activity
+            android:name=".WelcomeScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
