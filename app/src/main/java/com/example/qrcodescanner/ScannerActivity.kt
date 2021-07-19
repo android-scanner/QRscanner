@@ -24,7 +24,7 @@ class ScannerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.scanner_activity)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
                 PackageManager.PERMISSION_DENIED) {
@@ -36,7 +36,7 @@ class ScannerActivity : AppCompatActivity() {
         }
     }
         fun nextActivity(){
-            val intentScan = Intent(this,UIscreen::class.java)
+            val intentScan = Intent(this,UIScreen::class.java)
             startActivity(intentScan)
         }
     private fun startScanning() {
