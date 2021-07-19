@@ -1,37 +1,44 @@
-package com.example.qrcodescanner
+package com.example.qrcodescanner.ui
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import com.example.qrcodescanner.R
 
-class UIScreen : AppCompatActivity() {
+class VaccineInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_u_iscreen)
+        setContentView(R.layout.activity_vaccine_info)
 
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.nav_menu,menu)
+        menuInflater.inflate(R.menu.nav_menu, menu)
 
         return true
     }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.nav_acceuil -> {goToWelcomeActivityActivity()}
-            R.id.nav_quitter -> {goToExitActivity()}
+        when (item.itemId) {
+            R.id.nav_acceuil -> {
+                goToWelcomeActivityActivity()
+            }
+            R.id.nav_quitter -> {
+                goToExitActivity()
+            }
 
         }
         return super.onOptionsItemSelected(item)
     }
 
-    fun goToWelcomeActivityActivity() {
+    private fun goToWelcomeActivityActivity() {
         val intent = Intent(this, WelcomeScreen::class.java)
         startActivity(intent)
     }
 
-    fun goToExitActivity() {
+    private fun goToExitActivity() {
         finishAffinity()
     }
 

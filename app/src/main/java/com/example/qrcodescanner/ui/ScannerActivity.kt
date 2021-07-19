@@ -1,21 +1,15 @@
-package com.example.qrcodescanner
+package com.example.qrcodescanner.ui
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.budiyev.android.codescanner.AutoFocusMode
-import com.budiyev.android.codescanner.CodeScanner
-import com.budiyev.android.codescanner.CodeScannerView
-import com.budiyev.android.codescanner.DecodeCallback
-import com.budiyev.android.codescanner.ErrorCallback
-import com.budiyev.android.codescanner.ScanMode
-import java.util.*
+import com.budiyev.android.codescanner.*
+import com.example.qrcodescanner.R
 
 class ScannerActivity : AppCompatActivity() {
     private val code = 123
@@ -24,10 +18,11 @@ class ScannerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.scanner_activity)
+        setContentView(R.layout.activity_scanner)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
-                PackageManager.PERMISSION_DENIED) {
+            PackageManager.PERMISSION_DENIED
+        ) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), code)
         } else {
 
@@ -35,10 +30,12 @@ class ScannerActivity : AppCompatActivity() {
 
         }
     }
-        fun nextActivity(){
-            val intentScan = Intent(this,UIScreen::class.java)
-            startActivity(intentScan)
-        }
+
+    fun nextActivity() {
+        val intentScan = Intent(this, VaccineInfoActivity::class.java)
+        startActivity(intentScan)
+    }
+
     private fun startScanning() {
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
@@ -57,7 +54,11 @@ class ScannerActivity : AppCompatActivity() {
 
         codeScanner.errorCallback = ErrorCallback {
             runOnUiThread {
-                Toast.makeText(this, "Camera initialization error:${it.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "Camera initialization error:${it.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
@@ -66,7 +67,11 @@ class ScannerActivity : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == code) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
