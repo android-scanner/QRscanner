@@ -37,6 +37,7 @@ class ScannerActivity : AppCompatActivity() {
     }
 
     private fun startScanning() {
+
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
@@ -48,6 +49,13 @@ class ScannerActivity : AppCompatActivity() {
         codeScanner.isFlashEnabled = false
 
         codeScanner.decodeCallback = DecodeCallback {
+            runOnUiThread {
+                Toast.makeText(
+                    this,
+                    "this is the code : ${it.text}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
             nextActivity()
         }
 
