@@ -50,6 +50,7 @@ class ScannerActivity : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
+
                 Toast.makeText(
                     this,
                     "this is the code : ${it.text}",
