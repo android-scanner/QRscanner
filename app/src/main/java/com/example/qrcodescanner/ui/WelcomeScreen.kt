@@ -16,5 +16,9 @@ class WelcomeScreen : AppCompatActivity() {
             val intent = Intent(this, ScannerActivity::class.java)
             startActivity(intent)
         }
+        findViewById<Button>(R.id.CINBtn).setOnClickListener {
+            val intent = Intent(this, CIN::class.java)
+            startActivity(intent)
+        }
     }
 }

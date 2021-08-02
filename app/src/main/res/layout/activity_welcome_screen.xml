@@ -9,16 +9,29 @@
 
     <Button
         android:id="@+id/scanBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="109dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="60dp"
         android:text="@string/scan"
+        android:textColor="#EFE8E8"
+        app:backgroundTint="@color/dark_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/description_textview"
+        app:strokeColor="@color/light_brown" />
+
+    <Button
+        android:id="@+id/CINBtn"
+        android:layout_width="108dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/CIN"
         android:textColor="#EFE8E8"
         app:backgroundTint="@color/dark_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_textview"
+        app:layout_constraintTop_toBottomOf="@+id/scanBtn"
         app:strokeColor="@color/light_brown" />
 
     <TextView
@@ -38,8 +51,7 @@
         android:id="@+id/welcome_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="sans-serif-medium"
         android:text="@string/welcome"
         android:textColor="@color/dark_blue"

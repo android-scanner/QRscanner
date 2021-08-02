@@ -12,6 +12,10 @@ class VaccineInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vaccine_info)
 
+        val request = intent.getStringExtra("request")
+
+        //conditions here
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -24,6 +28,7 @@ class VaccineInfoActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.nav_acceuil -> {
                 goToWelcomeActivityActivity()
+                finish()
             }
             R.id.nav_quitter -> {
                 goToExitActivity()

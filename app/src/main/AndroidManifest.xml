@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QRCodeScanner">
+        <activity android:name=".ui.CIN"></activity>
         <activity
             android:name=".ui.ScannerActivity"
             android:screenOrientation="portrait"
