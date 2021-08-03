@@ -1,6 +1,5 @@
 package com.example.qrcodescanner.ui
 
-import android.R.attr.button
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -9,10 +8,10 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
 import com.example.qrcodescanner.R
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class CIN : AppCompatActivity() {
@@ -30,13 +29,14 @@ class CIN : AppCompatActivity() {
                     submitBtn.setEnabled(true)
                 }
             }
+
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable) {}
         })
         submitBtn.setOnClickListener {
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            intent.putExtra("CIN", cinTxt.text);
-            intent.putExtra("request", "cin")
+            intent.putExtra("request", cinTxt.text.toString());
+            intent.putExtra("type", "cin")
             startActivity(intent)
         }
 
@@ -70,5 +70,8 @@ class CIN : AppCompatActivity() {
     private fun goToExitActivity() {
         finishAffinity()
     }
+
+
+
 
 }
