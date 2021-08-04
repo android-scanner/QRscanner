@@ -9,5 +9,5 @@ data class User (
     var typevacc:String,
     var nometab:String,
     var qrcode:String,
-    var CIN:String
+    var cin:String
 )

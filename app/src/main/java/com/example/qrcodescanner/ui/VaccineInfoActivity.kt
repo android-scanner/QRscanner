@@ -9,9 +9,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
-import retrofit2.*
+import retrofit2.Call
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Path
+import javax.security.auth.callback.Callback
 
 class VaccineInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +23,6 @@ class VaccineInfoActivity : AppCompatActivity() {
         val request = intent.getStringExtra("request")
         val type = intent.getStringExtra("type")
 
-        findViewById<TextView>(R.id.document_id_value).text = request
 
         getUserData(type.toString(), request.toString())
 
@@ -58,32 +59,40 @@ class VaccineInfoActivity : AppCompatActivity() {
 
 
     private fun getUserData(type: String, request: String) {
-        val BASE_URL = "http://localhost:8080/"
+        val BASE_URL = "https://vaccinapi.herokuapp.com/"
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
         val api= retrofit.create(APIEndPoint::class.java)
-        val call: Call<ArrayList<User>>
+        val call: Call<User>
         if(type == "cin") {
             call = api.getUserByCIN(request)
         } else {
             call = api.getUserByQrcode(request)
         }
 
-        call.enqueue(object : Callback<ArrayList<User>?> {
-            override fun onResponse(
-                call: Call<ArrayList<User>?>,
-                response: Response<ArrayList<User>?>
-            ) {
-                Log.d("result", "yes")
+        val item = call.enqueue(object : retrofit2.Callback<User?> {
+            override fun onResponse(call: Call<User?>, response: Response<User?>) {
+                val userInfo = response.body()
+                findViewById<TextView>(R.id.name_value).text = userInfo?.nom + " " +userInfo?.prenom
+                findViewById<TextView>(R.id.document_id_value).text = userInfo?.cin?.replace("\\s".toRegex(), "")
+                findViewById<TextView>(R.id.agetext1).text = userInfo?.age.toString()
+                findViewById<TextView>(R.id.hospital_value).text = userInfo?.nometab
+                findViewById<TextView>(R.id.vaccine_type_value).text = userInfo?.typevacc
+                findViewById<TextView>(R.id.vaccine_number_value).text = userInfo?.nbrvacc.toString()
             }
 
-            override fun onFailure(call: Call<ArrayList<User>?>, t: Throwable) {
-                Log.d("result", "No")
+            override fun onFailure(call: Call<User?>, t: Throwable) {
+                CnxFailed()
             }
         })
+    }
+
+    fun CnxFailed() {
+        Toast.makeText(this, "The person is not vaccinated yet", Toast.LENGTH_LONG).show()
+        finish()
     }
 
 }
