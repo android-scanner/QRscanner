@@ -18,12 +18,9 @@ class VaccineInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vaccine_info)
-        fitshData()
+        var qr = intent.getStringExtra("qrcode")
+        fitshData(qr.toString())
 
-        var nom = "IKHARAZE"
-        var prenom = "Imad"
-
-        findViewById<TextView>(R.id.labelName).setText(nom+" "+prenom)
 
     }
 
@@ -54,35 +51,39 @@ class VaccineInfoActivity : AppCompatActivity() {
     private fun goToExitActivity() {
         finishAffinity()
     }
-fun fitshData(){
+fun fitshData(qr: String){
     val url ="https://vaccinapi.herokuapp.com/"
     val retrofit= Retrofit.Builder()
         .baseUrl(url)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
     val api: API = retrofit.create(API::class.java)
-    val call = api.getdata()
-    val item = call.enqueue(object : Callback<ArrayList<data>>{
-        override fun onFailure(call: Call<ArrayList<data>>, t: Throwable) {
+    val call = api.getdata(qr)
+    val item = call.enqueue(object : Callback<data?> {
+        override fun onFailure(call: Call<data?>, t: Throwable) {
             connectionF()
         }
 
-        override fun onResponse(call: Call<ArrayList<data>>, response: Response<ArrayList<data>>) {
-            connectionG(response)
+        override fun onResponse(call: Call<data?>, response: Response<data?>) {
+            findViewById<TextView>(R.id.labelName).text = response.body()?.nom + " " + response.body()?.prenom
+            findViewById<TextView>(R.id.labelID).text = response.body()?.cin
+            findViewById<TextView>(R.id.labelAge).text = response.body()?.age.toString()
+            findViewById<TextView>(R.id.labelHospital).text = response.body()?.nometab
+            findViewById<TextView>(R.id.labelTypeVacc).text = response.body()?.typevacc
+            findViewById<TextView>(R.id.labelNbrVacc).text = response.body()?.nbrvacc.toString()
         }
-
     })
 
+    }
 
 
-  }
     fun connectionF() {
         Toast.makeText(this, "Connection Failed", Toast.LENGTH_LONG).show()
     }
-    fun connectionG(response: Response<ArrayList<data>>) {
-        Toast.makeText(this, "Connection Succeed", Toast.LENGTH_LONG).show()
-    }
-}
+
+  }
+
+
 
 
 

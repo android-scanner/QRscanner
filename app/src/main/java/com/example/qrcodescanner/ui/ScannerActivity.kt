@@ -31,9 +31,10 @@ class ScannerActivity : AppCompatActivity() {
         }
     }
 
-    fun nextActivity() {
-        val intentScan = Intent(this, VaccineInfoActivity::class.java)
-        startActivity(intentScan)
+    fun nextActivity(qr: String) {
+        val intent = Intent(this, VaccineInfoActivity::class.java)
+        intent.putExtra("qrcode", qr)
+        startActivity(intent)
     }
 
     private fun startScanning() {
@@ -49,15 +50,7 @@ class ScannerActivity : AppCompatActivity() {
         codeScanner.isFlashEnabled = false
 
         codeScanner.decodeCallback = DecodeCallback {
-            runOnUiThread {
-
-                /**Toast.makeText(
-                    this,
-                    "this is the code : ${it.text}",
-                    Toast.LENGTH_LONG
-                ).show()**/
-            }
-            nextActivity()
+            nextActivity(it.text)
         }
 
 
