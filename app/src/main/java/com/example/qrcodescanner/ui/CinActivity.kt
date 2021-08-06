@@ -12,19 +12,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 
 
-class CinActivity : AppCompatActivity() {
+class CIN : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cin)
+        setContentView(R.layout.activity_c_i_n)
 
         val cinTxt = findViewById<EditText>(R.id.CINTxtBox)
         val submitBtn = findViewById<Button>(R.id.SubmitBtn)
         cinTxt.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.toString().trim { it <= ' ' }.isEmpty()) {
-                    submitBtn.isEnabled = false
+                if (s.toString().trim { it <= ' ' }.length == 0) {
+                    submitBtn.setEnabled(false)
                 } else {
-                    submitBtn.isEnabled = false
+                    submitBtn.setEnabled(true)
                 }
             }
 
@@ -32,12 +32,9 @@ class CinActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable) {}
         })
         submitBtn.setOnClickListener {
-            val request = "request"
-            val type = "type"
-            val cin = "cin"
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            intent.putExtra(request, cinTxt.text.toString())
-            intent.putExtra(type, cin)
+            intent.putExtra("request", cinTxt.text.toString());
+            intent.putExtra("type", "cin")
             startActivity(intent)
         }
 
@@ -64,13 +61,15 @@ class CinActivity : AppCompatActivity() {
     }
 
     private fun goToWelcomeActivityActivity() {
-        val intent = Intent(this, WelcomeActivity::class.java)
+        val intent = Intent(this, WelcomeScreen::class.java)
         startActivity(intent)
     }
 
     private fun goToExitActivity() {
         finishAffinity()
     }
+
+
 
 
 }
