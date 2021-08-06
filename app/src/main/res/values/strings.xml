@@ -16,5 +16,8 @@
     <string name="welcome">Welcome</string>
     <string name="text">To your safety place</string>
     <string name="scan">Scan</string>
+    <string name="cin_req">Enter your CIN :</string>
+    <string name="cin">CIN</string>
+    <string name="submit">Submit</string>
 
 </resources>

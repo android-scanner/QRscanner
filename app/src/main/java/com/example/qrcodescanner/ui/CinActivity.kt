@@ -11,11 +11,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 
+val req = "request"
+val type = "type"
+val cin = "cin"
 
-class CIN : AppCompatActivity() {
+
+class CinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_c_i_n)
+        setContentView(R.layout.activity_cin)
 
         val cinTxt = findViewById<EditText>(R.id.CINTxtBox)
         val submitBtn = findViewById<Button>(R.id.SubmitBtn)
@@ -33,8 +37,8 @@ class CIN : AppCompatActivity() {
         })
         submitBtn.setOnClickListener {
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            intent.putExtra("request", cinTxt.text.toString());
-            intent.putExtra("type", "cin")
+            intent.putExtra(req, cinTxt.text.toString());
+            intent.putExtra(type, cin)
             startActivity(intent)
         }
 
@@ -68,8 +72,6 @@ class CIN : AppCompatActivity() {
     private fun goToExitActivity() {
         finishAffinity()
     }
-
-
 
 
 }

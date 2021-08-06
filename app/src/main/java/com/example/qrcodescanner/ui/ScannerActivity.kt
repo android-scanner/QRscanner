@@ -13,7 +13,7 @@ import com.example.qrcodescanner.R
 
 class ScannerActivity : AppCompatActivity() {
     private val code = 123
-
+    private val qrcod = "qrcode"
     private lateinit var codeScanner: CodeScanner
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +33,8 @@ class ScannerActivity : AppCompatActivity() {
 
     fun nextActivity(qr: String) {
         val intent = Intent(this, VaccineInfoActivity::class.java)
-        intent.putExtra("request", qr);
-        intent.putExtra("type", "qrcode")
+        intent.putExtra(req, qr);
+        intent.putExtra(type, qrcod)
         startActivity(intent)
     }
 
