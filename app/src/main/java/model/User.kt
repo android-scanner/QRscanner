@@ -1,4 +1,4 @@
-package com.example.qrcodescanner.ui
+package model
 
 data class User (
     var id:Int,

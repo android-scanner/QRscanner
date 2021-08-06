@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QR code scanner</string>
+    <string name="app_name">VCheck</string>
     <string name="CIN">Enter CIN</string>
     <string name="full_name">Full Name: </string>
     <string name="id">ID Document: </string>
@@ -16,5 +16,11 @@
     <string name="welcome">Welcome</string>
     <string name="text">To your safety place</string>
     <string name="scan">Scan</string>
+    <string name="cin_req">Enter your CIN </string>
+    <string name="cin">CIN </string>
+    <string name="submit">Submit</string>
+    <string name="todo">TODO</string>
+    <string name="acceuil">acceuil</string>
+    <string name="quitter">Quitter</string>
 
 </resources>

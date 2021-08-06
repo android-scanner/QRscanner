@@ -31,10 +31,13 @@ class ScannerActivity : AppCompatActivity() {
         }
     }
 
-    fun nextActivity(qr: String) {
+    private fun nextActivity(qr: String) {
+        val request = "request"
+        val type = "type"
+        val qrCode = "qrCode"
         val intent = Intent(this, VaccineInfoActivity::class.java)
-        intent.putExtra("request", qr);
-        intent.putExtra("type", "qrcode")
+        intent.putExtra(request, qr)
+        intent.putExtra(type, qrCode)
         startActivity(intent)
     }
 

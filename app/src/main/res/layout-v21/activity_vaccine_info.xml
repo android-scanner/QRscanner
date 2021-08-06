@@ -179,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
                     android:shadowColor="@color/white"
-                    android:text="@string/full_name"
+                    android:text="@string/hospital"
                     android:textAlignment="gravity"
                     android:textColor="@color/gray"
                     android:textColorHint="@color/brown"

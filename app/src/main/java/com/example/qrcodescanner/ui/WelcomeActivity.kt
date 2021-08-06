@@ -6,7 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 
-class WelcomeScreen : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome_screen)
@@ -17,7 +17,7 @@ class WelcomeScreen : AppCompatActivity() {
             startActivity(intent)
         }
         findViewById<Button>(R.id.CINBtn).setOnClickListener {
-            val intent = Intent(this, CIN::class.java)
+            val intent = Intent(this, CinActivity::class.java)
             startActivity(intent)
         }
     }
