@@ -21,23 +21,17 @@ class CinActivity : AppCompatActivity() {
         val submitBtn = findViewById<Button>(R.id.SubmitBtn)
         cinTxt.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.toString().trim { it <= ' ' }.length == 0) {
-                    submitBtn.setEnabled(false)
-                } else {
-                    submitBtn.setEnabled(true)
-                }
+                submitBtn.isEnabled = s.toString().trim { it <= ' ' }.isNotEmpty()
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable) {}
         })
         submitBtn.setOnClickListener {
-            val request = "request"
-            val type = "type"
-            val cin = "cin"
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            intent.putExtra(request, cinTxt.text.toString());
-            intent.putExtra(type, cin)
+            val intentCin = "cin"
+            intent.putExtra(intentRequest, cinTxt.text.toString())
+            intent.putExtra(intentType, intentCin)
             startActivity(intent)
         }
 

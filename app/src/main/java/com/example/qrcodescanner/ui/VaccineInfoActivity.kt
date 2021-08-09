@@ -21,13 +21,11 @@ class VaccineInfoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vaccine_info)
 
-        val intentRequest = "request"
-        val intentType = "type"
         val request = intent.getStringExtra(intentRequest)
         val type = intent.getStringExtra(intentType)
 
 
-        getUserData(type.toString(), request.toString())
+        getUserData(request.toString(), type.toString())
 
     }
 
@@ -61,7 +59,7 @@ class VaccineInfoActivity : AppCompatActivity() {
     }
 
 
-    private fun getUserData(type: String, request: String) {
+    private fun getUserData(request: String, type: String) {
         val baseURL = "https://vaccinapi.herokuapp.com/"
         val retrofit = Retrofit.Builder()
             .baseUrl(baseURL)

@@ -11,6 +11,9 @@ import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
 import com.example.qrcodescanner.R
 
+const val intentRequest = "request"
+const val intentType = "type"
+
 class ScannerActivity : AppCompatActivity() {
     private val code = 123
 
@@ -32,12 +35,10 @@ class ScannerActivity : AppCompatActivity() {
     }
 
     private fun nextActivity(qr: String) {
-        val request = "request"
-        val type = "type"
-        val qrCode = "qrCode"
         val intent = Intent(this, VaccineInfoActivity::class.java)
-        intent.putExtra(request, qr)
-        intent.putExtra(type, qrCode)
+        val intentQrCode = "qrCode"
+        intent.putExtra(intentRequest, qr)
+        intent.putExtra(intentType, intentQrCode)
         startActivity(intent)
     }
 

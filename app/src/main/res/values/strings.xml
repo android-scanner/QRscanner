@@ -19,8 +19,8 @@
     <string name="cin_req">Enter your CIN </string>
     <string name="cin">CIN </string>
     <string name="submit">Submit</string>
-    <string name="todo">TODO</string>
     <string name="acceuil">acceuil</string>
     <string name="quitter">Quitter</string>
+    <string name="todo">TODO</string>
 
 </resources>
