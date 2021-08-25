@@ -11,14 +11,15 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 
+const val intentCin = "cin"
 
 class CinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cin)
 
-        val cinTxt = findViewById<EditText>(R.id.CINTxtBox)
-        val submitBtn = findViewById<Button>(R.id.SubmitBtn)
+        val cinTxt = findViewById<EditText>(R.id.txtBoxCIN)
+        val submitBtn = findViewById<Button>(R.id.btnSubmitCIN)
         cinTxt.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 submitBtn.isEnabled = s.toString().trim { it <= ' ' }.isNotEmpty()
@@ -29,7 +30,6 @@ class CinActivity : AppCompatActivity() {
         })
         submitBtn.setOnClickListener {
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            val intentCin = "cin"
             intent.putExtra(intentRequest, cinTxt.text.toString())
             intent.putExtra(intentType, intentCin)
             startActivity(intent)

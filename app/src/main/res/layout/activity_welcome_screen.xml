@@ -14,7 +14,7 @@
         tools:context=".ui.WelcomeActivity">
 
         <Button
-            android:id="@+id/scanBtn"
+            android:id="@+id/btnScan"
             android:layout_width="109dp"
             android:layout_height="47dp"
             android:layout_marginTop="30dp"
@@ -23,11 +23,11 @@
             app:backgroundTint="@color/dark_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description_textview"
+            app:layout_constraintTop_toBottomOf="@+id/txtViewDescription"
             app:strokeColor="@color/light_brown" />
 
         <Button
-            android:id="@+id/CINBtn"
+            android:id="@+id/btnCIN"
             android:layout_width="108dp"
             android:layout_height="46dp"
             android:layout_marginTop="16dp"
@@ -37,11 +37,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scanBtn"
+            app:layout_constraintTop_toBottomOf="@+id/btnScan"
             app:strokeColor="@color/light_brown" />
 
         <TextView
-            android:id="@+id/description_textview"
+            android:id="@+id/txtViewDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -51,10 +51,10 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_textview" />
+            app:layout_constraintTop_toBottomOf="@+id/txtViewWelcome" />
 
         <TextView
-            android:id="@+id/welcome_textview"
+            android:id="@+id/txtViewWelcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -65,10 +65,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo_img" />
+            app:layout_constraintTop_toBottomOf="@+id/imgViewLogo" />
 
         <ImageView
-            android:id="@+id/logo_img"
+            android:id="@+id/imgViewLogo"
             android:layout_width="wrap_content"
             android:layout_height="290dp"
             android:layout_marginStart="10dp"

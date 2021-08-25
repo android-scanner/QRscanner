@@ -8,9 +8,9 @@ import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import api.APIEndPoint
+import com.example.qrcodescanner.api.APIEndPoint
 import com.example.qrcodescanner.R
-import model.User
+import com.example.qrcodescanner.model.User
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -77,14 +77,14 @@ class VaccineInfoActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<User?>, response: Response<User?>) {
                 val userInfo = response.body()
-                findViewById<TextView>(R.id.name_value).text =
+                findViewById<TextView>(R.id.txtViewFName).text =
                     userInfo?.nom + " " + userInfo?.prenom
-                findViewById<TextView>(R.id.document_id_value).text =
+                findViewById<TextView>(R.id.txtViewID).text =
                     userInfo?.cin?.replace("\\s".toRegex(), "")
-                findViewById<TextView>(R.id.agetext1).text = userInfo?.age.toString()
-                findViewById<TextView>(R.id.hospital_value).text = userInfo?.nometab
-                findViewById<TextView>(R.id.vaccine_type_value).text = userInfo?.typevacc
-                findViewById<TextView>(R.id.vaccine_number_value).text =
+                findViewById<TextView>(R.id.txtViewAge).text = userInfo?.age.toString()
+                findViewById<TextView>(R.id.txtViewHospital).text = userInfo?.nometab
+                findViewById<TextView>(R.id.txtViewVaccType).text = userInfo?.typevacc
+                findViewById<TextView>(R.id.txtViewVaccNbr).text =
                     userInfo?.nbrvacc.toString()
             }
 
@@ -95,7 +95,7 @@ class VaccineInfoActivity : AppCompatActivity() {
     }
 
     fun cnxFailed() {
-        Toast.makeText(this, "The person is not vaccinated yet", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show()
         finish()
     }
 

@@ -22,5 +22,6 @@
     <string name="acceuil">acceuil</string>
     <string name="quitter">Quitter</string>
     <string name="todo">TODO</string>
+    <string name="error">The person is not vaccinated yet</string>
 
 </resources>

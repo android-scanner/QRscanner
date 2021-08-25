@@ -1,6 +1,6 @@
-package api
+package com.example.qrcodescanner.api
 
-import model.User
+import com.example.qrcodescanner.model.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

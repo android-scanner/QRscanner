@@ -12,7 +12,7 @@
         tools:context=".ui.VaccineInfoActivity">
 
         <TextView
-            android:id="@+id/vaccineinfotext2"
+            android:id="@+id/txtViewUserInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="124dp"
@@ -36,7 +36,7 @@
             android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vaccineinfotext2">
+            app:layout_constraintTop_toBottomOf="@+id/txtViewUserInfo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_person_info"
@@ -48,7 +48,7 @@
                 android:paddingBottom="24dp">
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/labelFName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
@@ -62,7 +62,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/name_value"
+                    android:id="@+id/txtViewFName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -72,12 +72,12 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/name"
+                    app:layout_constraintStart_toEndOf="@+id/labelFName"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/document_id"
+                    android:id="@+id/labelID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -88,10 +88,10 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/name" />
+                    app:layout_constraintTop_toBottomOf="@+id/labelFName" />
 
                 <TextView
-                    android:id="@+id/document_id_value"
+                    android:id="@+id/txtViewID"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -100,13 +100,13 @@
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/document_id"
+                    app:layout_constraintBottom_toBottomOf="@+id/labelID"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/document_id"
-                    app:layout_constraintTop_toTopOf="@+id/document_id" />
+                    app:layout_constraintStart_toEndOf="@+id/labelID"
+                    app:layout_constraintTop_toTopOf="@+id/labelID" />
 
                 <TextView
-                    android:id="@+id/agetext"
+                    android:id="@+id/labelAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -116,10 +116,10 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/document_id" />
+                    app:layout_constraintTop_toBottomOf="@+id/labelID" />
 
                 <TextView
-                    android:id="@+id/agetext1"
+                    android:id="@+id/txtViewAge"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -128,10 +128,10 @@
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/agetext"
+                    app:layout_constraintBottom_toBottomOf="@+id/labelAge"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/agetext"
-                    app:layout_constraintTop_toTopOf="@+id/agetext" />
+                    app:layout_constraintStart_toEndOf="@+id/labelAge"
+                    app:layout_constraintTop_toTopOf="@+id/labelAge" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -139,7 +139,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/vaccineinfotext"
+            android:id="@+id/txtViewVaccineInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -162,7 +162,7 @@
             android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vaccineinfotext">
+            app:layout_constraintTop_toBottomOf="@+id/txtViewVaccineInfo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_vaccine_info"
@@ -174,7 +174,7 @@
                 android:paddingBottom="24dp">
 
                 <TextView
-                    android:id="@+id/hospital"
+                    android:id="@+id/labelHospital"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
@@ -188,7 +188,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/hospital_value"
+                    android:id="@+id/txtViewHospital"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -198,11 +198,11 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/hospital"
+                    app:layout_constraintStart_toEndOf="@+id/labelHospital"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/vaccine_type"
+                    android:id="@+id/labelVaccType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -213,10 +213,10 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/hospital" />
+                    app:layout_constraintTop_toBottomOf="@+id/labelHospital" />
 
                 <TextView
-                    android:id="@+id/vaccine_type_value"
+                    android:id="@+id/txtViewVaccType"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -225,13 +225,13 @@
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/vaccine_type"
+                    app:layout_constraintBottom_toBottomOf="@+id/labelVaccType"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/vaccine_type"
-                    app:layout_constraintTop_toTopOf="@+id/vaccine_type" />
+                    app:layout_constraintStart_toEndOf="@+id/labelVaccType"
+                    app:layout_constraintTop_toTopOf="@+id/labelVaccType" />
 
                 <TextView
-                    android:id="@+id/vaccine_number"
+                    android:id="@+id/labelVaccNbr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -241,10 +241,10 @@
                     android:textColor="@color/gray"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/vaccine_type" />
+                    app:layout_constraintTop_toBottomOf="@+id/labelVaccType" />
 
                 <TextView
-                    android:id="@+id/vaccine_number_value"
+                    android:id="@+id/txtViewVaccNbr"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -253,10 +253,10 @@
                     android:textAlignment="viewEnd"
                     android:textColor="@color/gray"
                     android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/vaccine_number"
+                    app:layout_constraintBottom_toBottomOf="@+id/labelVaccNbr"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/vaccine_number"
-                    app:layout_constraintTop_toTopOf="@+id/vaccine_number" />
+                    app:layout_constraintStart_toEndOf="@+id/labelVaccNbr"
+                    app:layout_constraintTop_toTopOf="@+id/labelVaccNbr" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

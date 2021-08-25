@@ -11,12 +11,12 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome_screen)
 
-        val button = findViewById<Button>(R.id.scanBtn)
+        val button = findViewById<Button>(R.id.btnScan)
         button.setOnClickListener {
             val intent = Intent(this, ScannerActivity::class.java)
             startActivity(intent)
         }
-        findViewById<Button>(R.id.CINBtn).setOnClickListener {
+        findViewById<Button>(R.id.btnCIN).setOnClickListener {
             val intent = Intent(this, CinActivity::class.java)
             startActivity(intent)
         }
