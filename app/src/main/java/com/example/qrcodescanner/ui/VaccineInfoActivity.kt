@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.api.APIEndPoint
 import com.example.qrcodescanner.R
+import com.example.qrcodescanner.databinding.ActivityVaccineInfoBinding
 import com.example.qrcodescanner.model.User
 import retrofit2.Call
 import retrofit2.Response
@@ -17,9 +18,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class VaccineInfoActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityVaccineInfoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vaccine_info)
+        binding = ActivityVaccineInfoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val request = intent.getStringExtra(intentRequest)
         val type = intent.getStringExtra(intentType)
@@ -77,15 +82,12 @@ class VaccineInfoActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onResponse(call: Call<User?>, response: Response<User?>) {
                 val userInfo = response.body()
-                findViewById<TextView>(R.id.txtViewFName).text =
-                    userInfo?.nom + " " + userInfo?.prenom
-                findViewById<TextView>(R.id.txtViewID).text =
-                    userInfo?.cin?.replace("\\s".toRegex(), "")
-                findViewById<TextView>(R.id.txtViewAge).text = userInfo?.age.toString()
-                findViewById<TextView>(R.id.txtViewHospital).text = userInfo?.nometab
-                findViewById<TextView>(R.id.txtViewVaccType).text = userInfo?.typevacc
-                findViewById<TextView>(R.id.txtViewVaccNbr).text =
-                    userInfo?.nbrvacc.toString()
+                binding.txtViewFName.text = userInfo?.nom + " " + userInfo?.prenom
+                binding.txtViewID.text = userInfo?.cin?.replace("\\s".toRegex(), "")
+                binding.txtViewAge.text = userInfo?.age.toString()
+                binding.txtViewHospital.text = userInfo?.nometab
+                binding.txtViewVaccType.text = userInfo?.typevacc
+                binding.txtViewVaccNbr.text = userInfo?.nbrvacc.toString()
             }
 
             override fun onFailure(call: Call<User?>, t: Throwable) {
