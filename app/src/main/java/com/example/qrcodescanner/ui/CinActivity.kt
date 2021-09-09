@@ -7,7 +7,7 @@ import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 import com.example.qrcodescanner.databinding.ActivityCinBinding
