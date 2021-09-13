@@ -2,21 +2,22 @@ package com.example.qrcodescanner.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.qrcodescanner.R
+import com.example.qrcodescanner.databinding.ActivityWelcomeScreenBinding
 
 class WelcomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityWelcomeScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_welcome_screen)
+        binding = ActivityWelcomeScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val button = findViewById<Button>(R.id.btnScan)
-        button.setOnClickListener {
+        binding.btnScan.setOnClickListener {
             val intent = Intent(this, ScannerActivity::class.java)
             startActivity(intent)
         }
-        findViewById<Button>(R.id.btnCIN).setOnClickListener {
+        binding.btnCIN.setOnClickListener {
             val intent = Intent(this, CinActivity::class.java)
             startActivity(intent)
         }
