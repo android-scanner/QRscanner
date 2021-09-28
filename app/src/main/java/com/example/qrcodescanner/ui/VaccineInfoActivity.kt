@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -88,6 +89,7 @@ class VaccineInfoActivity : AppCompatActivity() {
                 binding.txtViewHospital.text = userInfo?.nometab
                 binding.txtViewVaccType.text = userInfo?.typevacc
                 binding.txtViewVaccNbr.text = userInfo?.nbrvacc.toString()
+                binding.infoProgressBar.visibility = View.GONE
             }
 
             override fun onFailure(call: Call<User?>, t: Throwable) {
