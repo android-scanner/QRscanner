@@ -86,9 +86,9 @@ class VaccineInfoActivity : AppCompatActivity() {
                 binding.txtViewFName.text = userInfo?.nom + " " + userInfo?.prenom
                 binding.txtViewID.text = userInfo?.cin?.replace("\\s".toRegex(), "")
                 binding.txtViewAge.text = userInfo?.age.toString()
-                binding.txtViewHospital.text = userInfo?.hospitalName
-                binding.txtViewVaccType.text = userInfo?.typeVacc
-                binding.txtViewVaccNbr.text = userInfo?.nbrVacc.toString()
+                binding.txtViewHospital.text = userInfo?.nometab
+                binding.txtViewVaccType.text = userInfo?.typevacc
+                binding.txtViewVaccNbr.text = userInfo?.nbrvacc.toString()
                 binding.infoProgressBar.visibility = View.GONE
             }
 
