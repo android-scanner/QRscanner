@@ -6,8 +6,6 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.qrcodescanner.R
 import com.example.qrcodescanner.databinding.ActivityCinBinding
@@ -23,19 +21,17 @@ class CinActivity : AppCompatActivity() {
         binding = ActivityCinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val cinTxt = binding.txtBoxCIN
-        val submitBtn = binding.btnSubmitCIN
-        cinTxt.addTextChangedListener(object : TextWatcher {
+        binding.txtBoxCIN.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                submitBtn.isEnabled = s.toString().trim { it <= ' ' }.isNotEmpty()
+                binding.btnSubmitCIN.isEnabled = s.toString().trim { it <= ' ' }.isNotEmpty()
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable) {}
         })
-        submitBtn.setOnClickListener {
+        binding.btnSubmitCIN.setOnClickListener {
             val intent = Intent(this, VaccineInfoActivity::class.java)
-            intent.putExtra(intentRequest, cinTxt.text.toString())
+            intent.putExtra(intentRequest, binding.txtBoxCIN.text.toString())
             intent.putExtra(intentType, intentCin)
             startActivity(intent)
         }
@@ -70,6 +66,4 @@ class CinActivity : AppCompatActivity() {
     private fun goToExitActivity() {
         finishAffinity()
     }
-
-
 }

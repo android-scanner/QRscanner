@@ -9,19 +9,22 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
-import com.example.qrcodescanner.R
+import com.example.qrcodescanner.databinding.ActivityScannerBinding
 
 const val intentRequest = "request"
 const val intentType = "type"
+const val code = 123
+const val intentQrCode = "qrCode"
 
 class ScannerActivity : AppCompatActivity() {
-    private val code = 123
 
+    private lateinit var binding: ActivityScannerBinding
     private lateinit var codeScanner: CodeScanner
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scanner)
+        binding = ActivityScannerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
             PackageManager.PERMISSION_DENIED
@@ -36,15 +39,13 @@ class ScannerActivity : AppCompatActivity() {
 
     private fun nextActivity(qr: String) {
         val intent = Intent(this, VaccineInfoActivity::class.java)
-        val intentQrCode = "qrCode"
         intent.putExtra(intentRequest, qr)
         intent.putExtra(intentType, intentQrCode)
         startActivity(intent)
     }
 
     private fun startScanning() {
-        val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
-        codeScanner = CodeScanner(this, scannerView)
+        codeScanner = CodeScanner(this, binding.scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
         codeScanner.formats = CodeScanner.ALL_FORMATS
 
@@ -68,7 +69,7 @@ class ScannerActivity : AppCompatActivity() {
             }
         }
 
-        scannerView.setOnClickListener {
+        binding.scannerView.setOnClickListener {
             codeScanner.startPreview()
         }
     }
